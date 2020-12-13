@@ -9,7 +9,7 @@ export class Details{
     public age:string,
     public sex:string,
     public modality:string,
-    public image:string,
+    public image:any,
 
 
 
@@ -21,6 +21,7 @@ export class Details{
 export class LogicService {
   name:any;
   patients:any;
+  patient:any=[];
   naveena:any=[];
   constructor() { }
   

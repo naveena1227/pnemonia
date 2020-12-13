@@ -2,9 +2,7 @@
   <a  class="simple-text logo-mini">
     
   </a>
-  <a  class="simple-text logo-normal">
-    DashBoard
-  </a>
+
 </div>
 <div class="sidebar-wrapper">
   <ul class="nav">
@@ -12,10 +10,26 @@
     >
       <a >
        
-        <p style="font-size: medium;">Patient Details</p>
+        <p style="font-size: 20px; font-weight: bold;">Patient List</p>
       </a>
-      
+
       <table class="table table-striped tablefont">
+        <thead>
+        </thead>
+        <li *ngFor="let d of logic.patient" (click)="displaydetails(d.name)">
+        <tbody >
+          <!-- (click)="displaySelectedPatientDetail()" -->
+        <tr>
+        <td>{{d.name}}</td>
+        </tr>
+        </tbody>
+        </table>
+
+
+
+
+
+      <!-- <table class="table table-striped tablefont">
         <thead>
           <th> Details </th>
         </thead>
@@ -25,7 +39,10 @@
           <td>{{d.name}}</td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
+
+
+
     </li>
   </ul>
 </div>

@@ -214,7 +214,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     let fromData = new FormData();
     fromData.append('file', this.selectedfile)
     console.log(this.selectedfile)
-    return this.http.post<Details>("http://pne-backend-svc.default:5011/sendimage", fromData).subscribe((result) => {
+    return this.http.post<Details>("http://10.197.0.55:30081/sendimage", fromData).subscribe((result) => {
 
       this.logic.naveena.push({
         "name": result.name,
@@ -225,7 +225,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
         "age": result.age,
         "sex": result.sex,
         "modality": result.modality,
-        "image": result.image
+        "image": 'data:image/jpeg;base64,' + result.image
       })
       console.log("naveena" + this.logic.naveena)
     });
@@ -243,7 +243,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     studyParams = studyParams.append("name", this.selectedsearch)
     const options = this.selectedsearch ?
       { params: new HttpParams().set('name', this.selectedsearch) } : {};
-    return this.http.get<Details>("http://pne-backend-svc.default:5011/search", options)
+    return this.http.get<Details>("http://10.197.0.55:30081/search", options)
       .subscribe((response) => {
         console.log("responce recieved", response)
         this.logic.naveena.push({
@@ -255,7 +255,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
           "age": response.age,
           "sex": response.sex,
           "modality": response.modality,
-          "image": response.image
+          "image": 'data:image/jpeg;base64,' + response.image
         })
         console.log("naveena" + this.logic.naveena)
       }
