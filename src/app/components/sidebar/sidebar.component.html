@@ -1,45 +1,31 @@
-<div class="logo">
-  <a  class="simple-text logo-mini">
-    
-  </a>
 
-</div>
 <div class="sidebar-wrapper">
   <ul class="nav">
     <li
     >
-      <a >
-       
-        <p style="font-size: 20px; font-weight: bold;">Patient List</p>
-      </a>
 
       <table class="table table-striped tablefont">
+        
         <thead>
+          <th>Patient List</th>
         </thead>
-        <li *ngFor="let d of logic.patient" (click)="displaydetails(d.name)">
-        <tbody >
+        <!-- <li *ngFor="let d of logic.patient" (click)="displaydetails(d.name)"[ngClass] = "{'highlight':d.name == this.logic.patientname}" > -->
+        <tbody *ngFor="let d of logic.patient" (click)="displaydetails(d.name)"[ngClass] = "{'highlight':d.name == this.logic.patientname}">
           <!-- (click)="displaySelectedPatientDetail()" -->
+          
+
         <tr>
         <td>{{d.name}}</td>
+        
         </tr>
+        
+      
+      
         </tbody>
+      
         </table>
 
 
-
-
-
-      <!-- <table class="table table-striped tablefont">
-        <thead>
-          <th> Details </th>
-        </thead>
-        <li *ngFor="let d of logic.patients"   [ngClass] = "{'highlight':d.name == this.logic.name}" (click)="displaydetails(d.name)">
-        <tbody (click)="displaydetails()">
-          <tr>
-          <td>{{d.name}}</td>
-          </tr>
-        </tbody>
-      </table> -->
 
 
 
